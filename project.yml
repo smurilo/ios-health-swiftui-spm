@@ -1,0 +1,21 @@
+name: AgendaSaude
+options:
+  bundleIdPrefix: com.smsmurilo
+  deploymentTarget: { iOS: "17.0" }
+packages:
+  AgendaSaude:
+    path: .
+targets:
+  AgendaSaudeApp:
+    type: application
+    platform: iOS
+    sources: [App]
+    dependencies:
+      - package: AgendaSaude
+        product: AppointmentsFeature
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.smsmurilo.agendasaude
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_CFBundleDisplayName: Agenda Saúde
